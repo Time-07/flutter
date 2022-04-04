@@ -34,7 +34,7 @@ class _SplashPageState extends ModularState<SplashPage, SplashController> {
                 height: 110,
                 alignment: Alignment.center,
                 child: const Text(
-                  'ioasys pokédex',
+                  'Trans Care',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
