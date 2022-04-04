@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trans_app/app/modules/login/presentation/login_controller.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -7,26 +7,31 @@ class CustomTextFormField extends StatelessWidget {
     required this.labelText,
     this.obscureText = false,
     required this.validar,
+    this.autovalidar = false,
   }) : super(key: key);
 
   final String labelText;
   final bool obscureText;
+  final bool autovalidar;
   final Function validar;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0),
-      child: TextFormField(
-        obscureText: obscureText,
-        validator: (value) {
-          return validar(value);
-        },
-        decoration: InputDecoration(
-          labelText: labelText,
-          border: const OutlineInputBorder(),
-        ),
+    return FormBuilderTextField(
+      obscureText: obscureText,
+      autovalidateMode: autovalidar == true
+          ? AutovalidateMode.onUserInteraction
+          : AutovalidateMode.disabled,
+      name: labelText,
+      validator: (value) {
+        return validar(value);
+      },
+      decoration: InputDecoration(
+        labelText: labelText,
+        labelStyle: const TextStyle(color: Color(0xFFA4A4A4)),
+        border: const OutlineInputBorder(),
       ),
+      keyboardType: TextInputType.number,
     );
   }
 }

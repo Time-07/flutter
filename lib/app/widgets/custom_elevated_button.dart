@@ -15,6 +15,7 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(minimumSize: const Size(256, 64)),
       onPressed: () {
+        formKey.currentState!.save();
         if (formKey.currentState!.validate()) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Funcionou')),

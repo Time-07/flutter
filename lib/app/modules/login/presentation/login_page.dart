@@ -33,23 +33,24 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 style: Theme.of(context).textTheme.headline1,
               ),
               const SizedBox(height: 32),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    CustomTextFormField(
-                      labelText: 'email',
-                      validar: controller.verificaEmailValido,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextFormField(
-                      labelText: 'senha',
-                      validar: controller.verificaSenha,
-                      obscureText: true,
-                    )
-                  ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                        labelText: 'email',
+                        validar: controller.verificaEmailValido,
+                      ),
+                      const SizedBox(height: 15),
+                      CustomTextFormField(
+                        labelText: 'senha',
+                        validar: controller.verificaSenha,
+                        obscureText: true,
+                      )
+                    ],
+                  ),
                 ),
               ),
               Row(
@@ -68,9 +69,12 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 formKey: _formKey,
               ),
               const SizedBox(height: 10),
-              const Text('Ainda não tem uma conta?'),
+              Text(
+                'Ainda não tem uma conta?',
+                style: Theme.of(context).textTheme.headline6,
+              ),
               const CustomUnderlineTextButton(
-                rota: '/',
+                rota: '/cadastro',
                 texto: 'Cadastre-se!',
               )
             ],

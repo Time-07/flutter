@@ -1,5 +1,35 @@
 class RegisterController {
-  String? verificaSenha2(String? senhaDigitada) {
+  String nome = '';
+  String email = '';
+  String senha = '';
+  String identidade = '';
+
+  String? verificaNome(String? nomeDigitado) {
+    if (nomeDigitado == null || nomeDigitado == '') {
+      return '\u26A0 Digite seu nome';
+    }
+
+    nome = nomeDigitado;
+    return null;
+  }
+
+  String? verificaEmailValido(String? emailDigitado) {
+    if (emailDigitado == null || emailDigitado.isEmpty) {
+      return '\u26A0 Digite seu email';
+    }
+
+    //A expressão regular abaixo filtra emails não válidos
+    if (!RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(emailDigitado)) {
+      return '\u26A0 Email inválido!';
+    }
+
+    email = emailDigitado;
+    return null;
+  }
+
+  String? verificaSenhaForte(String? senhaDigitada) {
     String saida = '';
     if (senhaDigitada == null || senhaDigitada.isEmpty) {
       return '\u26A0 Digite sua senha';
@@ -10,7 +40,7 @@ class RegisterController {
     }
 
     if (!RegExp(r"(?=.*[0-9])").hasMatch(senhaDigitada)) {
-      saida += '\u26A0 A senha deve conter ao menos uma número!\n';
+      saida += '\u26A0 A senha deve conter ao menos um número!\n';
     }
 
     if (!RegExp(r"(?=.*[-+_!@#$%^&*., ?])").hasMatch(senhaDigitada)) {
@@ -25,7 +55,26 @@ class RegisterController {
       return saida;
     }
 
-    //senha = senhaDigitada;
+    senha = senhaDigitada;
+    return null;
+  }
+
+  String? confirmaSenha(String? confirmacaoSenhaDigitada) {
+    if (confirmacaoSenhaDigitada == null || confirmacaoSenhaDigitada == '') {
+      return '\u26A0 Campo obrigatório!\n';
+    }
+
+    if (senha != confirmacaoSenhaDigitada) {
+      return '\u26A0 As senhas não coincidem!\n';
+    }
+    return null;
+  }
+
+  String? validarIdentidade(String? identidadeSelecionada) {
+    if (identidadeSelecionada == null || identidadeSelecionada == '') {
+      return '\u26A0 Campo obrigatório!\n';
+    }
+    identidade = identidadeSelecionada;
     return null;
   }
 }

@@ -16,7 +16,10 @@ class CustomUnderlineTextButton extends StatelessWidget {
       },
       child: Text(
         texto,
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.headline6!.copyWith(
+              color: Colors.black.withOpacity(0.5),
+              decoration: TextDecoration.underline,
+            ),
       ),
     );
   }

@@ -15,8 +15,8 @@ class AppWidget extends StatelessWidget {
                 primary: const Color(0xFFCACACA),
                 secondary: Colors.white,
               ),
-          textTheme: TextTheme(
-            headline1: const TextStyle(
+          textTheme: const TextTheme(
+            headline1: TextStyle(
                 fontFamily: 'Fredoka',
                 fontSize: 32.0,
                 fontWeight: FontWeight.w400,
@@ -25,8 +25,6 @@ class AppWidget extends StatelessWidget {
               fontFamily: 'Inter',
               fontSize: 14.0,
               fontWeight: FontWeight.w400,
-              color: Colors.black.withOpacity(0.5),
-              decoration: TextDecoration.underline,
             ),
           )),
       initialRoute: '/',
