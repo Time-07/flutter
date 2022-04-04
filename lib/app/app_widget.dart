@@ -10,14 +10,25 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Trans',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        primaryColor: const Color(0xFFEC0344),
-        colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: const Color(0xFFEC0344),
-              secondary: Colors.white,
+          primaryColor: const Color(0xFFCACACA),
+          colorScheme: Theme.of(context).colorScheme.copyWith(
+                primary: const Color(0xFFCACACA),
+                secondary: Colors.white,
+              ),
+          textTheme: TextTheme(
+            headline1: const TextStyle(
+                fontFamily: 'Fredoka',
+                fontSize: 32.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.black),
+            headline6: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+              color: Colors.black.withOpacity(0.5),
+              decoration: TextDecoration.underline,
             ),
-        fontFamily: 'Poppins',
-      ),
+          )),
       initialRoute: '/',
     ).modular();
   }
