@@ -6,6 +6,9 @@ class AppModule extends Module{
   @override
   final List<Bind> binds = [
     Bind.factory((i) => Dio(i())),
+    //TODO: trocar url quando Michele fizer o endpoint
+    Bind.factory<BaseOptions>(
+         (i) => BaseOptions(baseUrl: 'https://api.hgbrasil.com')),
   ];
 
   @override
