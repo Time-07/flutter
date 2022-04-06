@@ -4,12 +4,16 @@ import 'package:trans_app/app/modules/login/login_module.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
 import 'package:trans_app/app/modules/register/register_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
+import 'modules/login/login_module.dart';
 
-class AppModule extends Module {
+class AppModule extends Module{
   @override
   final List<Bind> binds = [
     Bind.factory((i) => Dio(i())),
     Bind.factory((i) => RegisterController()),
+    //TODO: trocar url quando Michele fizer o endpoint
+    Bind.factory<BaseOptions>(
+         (i) => BaseOptions(baseUrl: 'https://api.hgbrasil.com')),
   ];
 
   @override
