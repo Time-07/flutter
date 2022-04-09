@@ -39,7 +39,7 @@ class _RegisterPageState
                   const SizedBox(height: 32),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                    child: FormBuilder(
+                    child: Form(
                         key: _formKey,
                         child: Column(
                           children: [
@@ -47,27 +47,29 @@ class _RegisterPageState
                               labelText: 'Como posso te chamar?',
                               validar: controller.verificaNome,
                             ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 5),
-                                  child: Text(
-                                    '*Nome pelo qual você se identifica',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline6!
-                                        .copyWith(
-                                          color: Colors.black.withOpacity(0.5),
-                                        ),
-                                  ),
-                                ),
-                              ],
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                '*Nome pelo qual você se identifica',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6!
+                                    .copyWith(
+                                      color: Colors.black.withOpacity(0.5),
+                                    ),
+                              ),
                             ),
                             const SizedBox(height: 15),
                             CustomTextFormField(
                               labelText: 'Qual é o seu email?',
                               autovalidar: true,
                               validar: controller.verificaEmailValido,
+                            ),
+                            const SizedBox(height: 15),
+                            CustomTextFormField(
+                              labelText: 'Qual é o seu cpf?',
+                              autovalidar: true,
+                              validar: controller.verificaCPFValido,
                             ),
                             const SizedBox(height: 15),
                             CustomTextFormField(
