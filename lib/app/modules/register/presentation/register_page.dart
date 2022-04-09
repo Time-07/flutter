@@ -46,6 +46,7 @@ class _RegisterPageState
                             CustomTextFormField(
                               labelText: 'Como posso te chamar?',
                               validar: controller.verificaNome,
+                              textInput: TextInputType.name,
                             ),
                             Align(
                               alignment: Alignment.topLeft,
@@ -64,12 +65,14 @@ class _RegisterPageState
                               labelText: 'Qual é o seu email?',
                               autovalidar: true,
                               validar: controller.verificaEmailValido,
+                              textInput: TextInputType.emailAddress,
                             ),
                             const SizedBox(height: 15),
                             CustomTextFormField(
                               labelText: 'Qual é o seu cpf?',
                               autovalidar: true,
                               validar: controller.verificaCPFValido,
+                              textInput: TextInputType.number,
                             ),
                             const SizedBox(height: 15),
                             CustomTextFormField(
