@@ -68,6 +68,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               CustomElevatedButton(
                 texto: 'Entrar',
                 formKey: _formKey,
+                rota: '/home',
               ),
               const SizedBox(height: 10),
               Text(

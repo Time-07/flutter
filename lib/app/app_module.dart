@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/home/home_module.dart';
-import 'package:trans_app/app/modules/home/presentation/register_page.dart';
+import 'package:trans_app/app/modules/home/presentation/home_page.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
 import 'package:trans_app/app/modules/register/register_module.dart';

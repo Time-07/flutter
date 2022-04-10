@@ -118,6 +118,7 @@ class _RegisterPageState
                   const CustomUnderlineTextButton(
                       rota: '/', texto: 'Termos de Uso.'),
                   CustomElevatedButton(
+                    rota: '/home',
                     texto: 'Cadastrar',
                     formKey: _formKey,
                   ),
