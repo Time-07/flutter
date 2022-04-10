@@ -30,6 +30,7 @@ class CustomTextFormField extends StatelessWidget {
           return validar(value);
         },
         decoration: InputDecoration(
+          errorMaxLines: 6,
           labelText: labelText,
           labelStyle: const TextStyle(color: Color(0xFFA4A4A4)),
           border: const OutlineInputBorder(),
