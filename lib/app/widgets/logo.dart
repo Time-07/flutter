@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({Key? key}) : super(key: key);
+  const Logo({Key? key, required this.radius}) : super(key: key);
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      backgroundColor: Color(0xFFC4C4C4),
-      radius: 72,
+    return CircleAvatar(
+      backgroundColor: const Color(0xFFC4C4C4),
+      radius: radius,
     );
   }
 }

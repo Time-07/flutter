@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-//TODO: Devolver valor para o controller
-
 class CustomRadialList extends StatelessWidget {
   const CustomRadialList({
     Key? key,
