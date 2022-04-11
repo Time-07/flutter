@@ -11,7 +11,7 @@ class LoginDatasource extends ILoginDatasource{
   //TODO: Receber  email e nome como parametro
   @override
   Future<UserEntity> login(String email, String password) async {
-      final respose = await _httpClient.post('/',data: {'email': 'email', 'name': 'nome'});
+      final respose = await _httpClient.post('/auth/login',data: {'email': email, 'password': password});
       var result = UserModel.fromJson(respose.data);
       return result;
   }

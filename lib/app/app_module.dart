@@ -1,25 +1,24 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
-import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
-import 'package:trans_app/app/modules/register/register_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
-import 'modules/login/login_module.dart';
+
+import 'modules/register/register_module.dart';
 
 class AppModule extends Module{
   @override
   final List<Bind> binds = [
     Bind.factory((i) => Dio(i())),
-    Bind.factory((i) => RegisterController()),
-    //TODO: trocar url quando Michele fizer o endpoint
     Bind.factory<BaseOptions>(
-         (i) => BaseOptions(baseUrl: 'https://api.hgbrasil.com')),
+         (i) => BaseOptions(baseUrl: 'https://camp-api-docker-v3.herokuapp.com/api/v1')),
   ];
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/', module: SplashModule()),
+        ModuleRoute('/register',module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
-        ModuleRoute('/cadastro', module: RegisterModule()),
-      ];
+        ModuleRoute('/', module: SplashModule()),
+  ];
 }

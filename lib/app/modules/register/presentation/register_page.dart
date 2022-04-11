@@ -115,6 +115,7 @@ class _RegisterPageState
                   CustomElevatedButton(
                     texto: 'Cadastrar',
                     formKey: _formKey,
+                    
                   ),
                   const SizedBox(height: 24),
                 ],

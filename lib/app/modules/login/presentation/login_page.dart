@@ -74,7 +74,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 style: Theme.of(context).textTheme.headline6,
               ),
               const CustomUnderlineTextButton(
-                rota: '/cadastro',
+                rota: '/register',
                 texto: 'Cadastre-se!',
               )
             ],
