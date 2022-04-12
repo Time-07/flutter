@@ -1,6 +1,12 @@
+import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
+
 class LoginController {
   String email = "";
   String senha = "";
+  final ILogin _login;
+
+  LoginController({required ILogin login,
+  }) : _login = login;
 
   String? verificaEmailValido(String? emailDigitado) {
     if (emailDigitado == null || emailDigitado.isEmpty) {
@@ -25,5 +31,17 @@ class LoginController {
 
     senha = senhaDigitada;
     return null;
+  }
+
+  login(){
+    //TODO: cpf não está vindo do front
+    //TODO: chamar o modular navigate dentro do try
+    
+    try{
+      var usuarioLogado = _login.call(email, senha);
+      print(usuarioLogado);
+    }on Exception catch(_){
+      throw Exception("Usuario não encontrado");
+    }
   }
 }

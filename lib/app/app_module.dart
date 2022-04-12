@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
 
