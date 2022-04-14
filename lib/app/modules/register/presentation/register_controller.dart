@@ -8,10 +8,11 @@ class RegisterController {
   String senha = '';
   String identidade = '';
   String cpf = '';
-  
+
   final IRegister _register;
 
-  RegisterController({required IRegister register,
+  RegisterController({
+    required IRegister register,
   }) : _register = register;
 
   String? verificaNome(String? nomeDigitado) {
@@ -104,15 +105,16 @@ class RegisterController {
     return null;
   }
 
-  register(){
+  register() {
     //TODO: cpf não está vindo do front
     //TODO: chamar o modular navigate dentro do try
-    try{
-      var usuarioCadastrado = _register.call(nome, '', email, senha, identidade);
-      print(usuarioCadastrado);
-     // Modular.to.navigate('/home');
-    }on Exception catch(_){
-            throw Exception("Cadastro não realizado");
+    try {
+      var usuarioCadastrado =
+          _register.call(nome, '', email, senha, identidade);
+      print('AQUI: $usuarioCadastrado'.toString());
+      Modular.to.navigate('/home');
+    } on Exception catch (_) {
+      throw Exception("Cadastro não realizado");
     }
   }
 }

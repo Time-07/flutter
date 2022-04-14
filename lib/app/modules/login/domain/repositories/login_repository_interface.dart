@@ -4,3 +4,4 @@ abstract class ILoginRepository {
   //TODO: Alterado momentaneamente
   //ORIGINAL: Future<UserEntity> login();
   Future<UserEntity> login(String email, String password);
+}

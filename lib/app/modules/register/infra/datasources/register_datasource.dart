@@ -41,6 +41,10 @@ class RegisterDatasource extends IRegisterDatasource {
       'linkedin': ''
     });
     var result = UserModel.fromJson(respose.data);
+
+    print('AQUI2: $respose');
+    print('AQUI2: $responseRoles');
+
     return result;
   }
 
