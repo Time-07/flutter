@@ -15,9 +15,9 @@ class RegisterDatasource extends IRegisterDatasource {
   Future<UserEntity> register(String name, String cpf, String email,
       String password, String gender) async {
     final responseRoles =
-        await _httpClient.post('/roles', data: {'name': name});
+        await _httpClient.post('/roles', data: {'name': 'Trans'});
     final id = getIdFromRoles(responseRoles.data);
-    final respose = await _httpClient.post('/', data: {
+    final respose = await _httpClient.post('/users', data: {
       'name': name,
       'cpf': cpf,
       'email': email,

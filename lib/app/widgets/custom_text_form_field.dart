@@ -31,7 +31,6 @@ class CustomTextFormField extends StatelessWidget {
         labelStyle: const TextStyle(color: Color(0xFFA4A4A4)),
         border: const OutlineInputBorder(),
       ),
-      keyboardType: TextInputType.number,
     );
   }
 }
