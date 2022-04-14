@@ -42,6 +42,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       CustomTextFormField(
                         labelText: 'email',
                         validar: controller.verificaEmailValido,
+                        textInput: TextInputType.emailAddress,
                       ),
                       const SizedBox(height: 15),
                       CustomTextFormField(

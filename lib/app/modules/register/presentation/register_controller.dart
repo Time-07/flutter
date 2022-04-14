@@ -7,6 +7,8 @@ class RegisterController {
   String email = '';
   String senha = '';
   String identidade = '';
+  String cpf = '';
+  
   final IRegister _register;
 
   RegisterController({required IRegister register,
@@ -34,6 +36,22 @@ class RegisterController {
     }
 
     email = emailDigitado;
+    return null;
+  }
+
+  String? verificaCPFValido(String? cpfDigitado) {
+    if (cpfDigitado == null || cpfDigitado.isEmpty) {
+      return '\u26A0 Digite seu CPF';
+    }
+
+    //A expressão regular abaixo filtra CPFs não válidos
+    if (!RegExp(
+            r"^([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})+")
+        .hasMatch(cpfDigitado)) {
+      return '\u26A0 CPF inválido!';
+    }
+
+    cpf = cpfDigitado;
     return null;
   }
 

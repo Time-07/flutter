@@ -2,18 +2,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
 import 'package:trans_app/app/modules/login/domain/repositories/login_repository_interface.dart';
 
-abstract class ILogin{
+abstract class ILogin {
   Future call(String email, String password);
 }
 
-class Login extends ILogin{
+class Login extends ILogin {
   final ILoginRepository _loginRepository;
 
-  Login({required ILoginRepository loginRepository}):_loginRepository = loginRepository;
+  Login({required ILoginRepository loginRepository})
+      : _loginRepository = loginRepository;
 
   //TODO : verificar resposta do login
   @override
-  Future<UserEntity> call(String email, String password) async{
+  Future<UserEntity> call(String email, String password) async {
     var user = await _loginRepository.login(email, password);
     savePref(email, password);
     return UserEntity(email: user.email, password: user.password);
