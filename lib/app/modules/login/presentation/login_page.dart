@@ -68,6 +68,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               CustomElevatedButton(
                 texto: 'Entrar',
                 formKey: _formKey,
+                onPressedCall: controller.login,
               ),
               const SizedBox(height: 10),
               Text(
@@ -75,7 +76,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 style: Theme.of(context).textTheme.headline6,
               ),
               const CustomUnderlineTextButton(
-                rota: '/cadastro',
+                rota: '/register',
                 texto: 'Cadastre-se!',
               )
             ],
