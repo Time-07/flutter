@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     Key? key,
     required this.texto,
     required this.formKey,
+    required this.rota,
   }) : super(key: key);
 
   final String texto;
   final GlobalKey<FormState> formKey;
+  final String rota;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,7 @@ class CustomElevatedButton extends StatelessWidget {
       onPressed: () {
         formKey.currentState!.save();
         if (formKey.currentState!.validate()) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Funcionou')),
-          );
+          Modular.to.navigate(rota);
         }
       },
       child: Text(

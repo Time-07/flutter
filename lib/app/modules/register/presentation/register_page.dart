@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
 import 'package:trans_app/app/widgets/custom_elevated_button.dart';
@@ -30,7 +29,7 @@ class _RegisterPageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 30),
-                  const Logo(),
+                  const Logo(radius: 70),
                   const SizedBox(height: 24),
                   Text(
                     'Cadastro',
@@ -117,7 +116,11 @@ class _RegisterPageState
                   ),
                   const CustomUnderlineTextButton(
                       rota: '/', texto: 'Termos de Uso.'),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   CustomElevatedButton(
+                    rota: '/home',
                     texto: 'Cadastrar',
                     formKey: _formKey,
                   ),
