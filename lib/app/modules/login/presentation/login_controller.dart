@@ -1,3 +1,4 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
 
 class LoginController {
@@ -40,6 +41,7 @@ class LoginController {
     try{
       var usuarioLogado = _login.call(email, senha);
       print(usuarioLogado);
+      Modular.to.navigate('/home');
     }on Exception catch(_){
       throw Exception("Usuario não encontrado");
     }

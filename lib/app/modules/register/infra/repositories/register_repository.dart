@@ -10,6 +10,7 @@ class RegisterRepository extends IRegisterRepository{
 
   @override
   Future<UserEntity> register(String name, String cpf, String email, String password, String gender) async {
+    print('passou no register repository');
     final result = await _registerDatasource.register(name, cpf, email, password, gender);
 
     return result;
