@@ -11,7 +11,6 @@ class LoginRepository extends ILoginRepository{
   @override
   Future<UserEntity> login(String email, String password) async {
     final result = await _loginDatasource.login(email, password);
-
     return result;
   }
 }
