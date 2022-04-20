@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({Key? key}) : super(key: key);
+  const Logo({Key? key, required this.radius}) : super(key: key);
+  final double radius;
 
   @override
   Widget build(BuildContext context) {

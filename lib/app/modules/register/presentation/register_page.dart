@@ -29,7 +29,7 @@ class _RegisterPageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 30),
-                  const Logo(),
+                  const Logo(radius: 70),
                   const SizedBox(height: 24),
                   Text(
                     'Cadastro',
@@ -116,7 +116,11 @@ class _RegisterPageState
                   ),
                   const CustomUnderlineTextButton(
                       rota: '/', texto: 'Termos de Uso.'),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   CustomElevatedButton(
+                    rota: '/home',
                     texto: 'Cadastrar',
                     onPressedCall: controller.register,
                   ),
