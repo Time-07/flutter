@@ -18,7 +18,6 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState
     extends ModularState<RegisterPage, RegisterController> {
   final _formKey = GlobalKey<FormState>();
-  final ValueNotifier<String> identidadeSelecionada = ValueNotifier('');
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +103,7 @@ class _RegisterPageState
                                     'Pessoa Trans Não-binária',
                                     'Outra Identidade'
                                   ],
-                                  identidadeSelecionada: identidadeSelecionada,
+                                  identidadeSelecionada: controller.identidadeSelecionada,
                                   titulo: 'Você se identifica como:',
                                 )),
                           ],

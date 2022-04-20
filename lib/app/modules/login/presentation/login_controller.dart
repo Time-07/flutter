@@ -1,12 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
 import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
+import 'package:trans_app/common/enums/status.dart';
 
 class LoginController {
   String email = "";
   String senha = "";
   final ILogin _login;
   UserEntity usuarioLogado = UserEntity(email: "", password: "");
+  //criar enum loginStatus
+  final ValueNotifier<Status> loginStatus = ValueNotifier(Status.none);
 
   LoginController({required ILogin login,
   }) : _login = login;
@@ -38,7 +42,15 @@ class LoginController {
 
   login(){
     //TODO: chamar o modular navigate dentro do try
+    try{
+      loginStatus.value = Status.loading;
       usuarioLogado = _login.call(email, senha) as UserEntity;
+      loginStatus.value = Status.succes;
       Modular.to.navigate('/home');
+    }catch(_){
+      //mostrar mensagem falha ao realizar login
+      //loginstatus.error
+      loginStatus.value = Status.error;
+    }
   }
 }
