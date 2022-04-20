@@ -17,7 +17,7 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          //TODO: Botão adaptativo
+          elevation: 10,
           minimumSize: const Size(256, 64),
           primary: Theme.of(context).colorScheme.tertiary,
           side: BorderSide(

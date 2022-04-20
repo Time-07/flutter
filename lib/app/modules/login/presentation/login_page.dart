@@ -26,7 +26,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              const Logo(),
+              const Logo(
+                tamanho: 120,
+              ),
               const SizedBox(height: 24),
               Text(
                 'Login',
@@ -65,17 +67,20 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 ],
               ),
               const SizedBox(height: 15),
-              CustomElevatedButton(
-                  texto: 'Entrar',
-                  onPressedCall: () {
-                    _formKey.currentState!.save();
-                    if (_formKey.currentState!.validate()) {
-                      controller.login.call();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Funcionou')),
-                      );
-                    }
-                  }),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: CustomElevatedButton(
+                    texto: 'Entrar',
+                    onPressedCall: () {
+                      _formKey.currentState!.save();
+                      if (_formKey.currentState!.validate()) {
+                        controller.login.call();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Funcionou')),
+                        );
+                      }
+                    }),
+              ),
               const SizedBox(height: 10),
               Text(
                 'Ainda não tem uma conta?',

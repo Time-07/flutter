@@ -29,7 +29,7 @@ class _RegisterPageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 30),
-                  const Logo(),
+                  const Logo(tamanho: 120),
                   const SizedBox(height: 24),
                   Text(
                     'Cadastro',
@@ -119,9 +119,19 @@ class _RegisterPageState
                   const SizedBox(
                     height: 15,
                   ),
-                  CustomElevatedButton(
-                    texto: 'Cadastrar',
-                    onPressedCall: controller.register,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                    child: CustomElevatedButton(
+                        texto: 'Entrar',
+                        onPressedCall: () {
+                          _formKey.currentState!.save();
+                          if (_formKey.currentState!.validate()) {
+                            controller.register();
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Funcionou')),
+                            );
+                          }
+                        }),
                   ),
                   const SizedBox(height: 24),
                 ],
