@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/widgets/custom_app_bar.dart';
+import 'package:trans_app/app/widgets/custom_elevated_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,26 +32,12 @@ class HomePage extends StatelessWidget {
                 indent: 25,
                 endIndent: 25,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(165, 60),
-                ),
-                onPressed: () {
-                  Modular.to.navigate('/');
+              CustomElevatedButton(
+                texto: 'Pesquisar',
+                icone: Icons.person_search,
+                onPressedCall: () {
+                  print('hello');
                 },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Icon(
-                      Icons.manage_search_outlined,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      'Pesquisar',
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                  ],
-                ),
               )
             ],
           ),

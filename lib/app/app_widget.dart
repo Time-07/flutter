@@ -10,10 +10,12 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Trans',
       theme: ThemeData(
-          primaryColor: const Color(0xFFCACACA),
           colorScheme: Theme.of(context).colorScheme.copyWith(
-                primary: const Color(0xFFCACACA),
-                secondary: Colors.white,
+                primary: const Color(0xFFECDBF4),
+                secondary: const Color(0xFF744D83),
+                tertiary: const Color(0xFFFCF1F3),
+                outline: const Color(0xFFF5A9B8),
+                primaryVariant: const Color(0xFF111111),
               ),
           textTheme: const TextTheme(
             headline1: TextStyle(

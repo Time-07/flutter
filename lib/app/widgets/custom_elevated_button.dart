@@ -1,31 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter/rendering.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     Key? key,
     required this.texto,
-    required this.formKey,
-    required this.rota,
+    required this.onPressedCall,
+    this.icone,
   }) : super(key: key);
 
   final String texto;
-  final GlobalKey<FormState> formKey;
-  final String rota;
+  final Function onPressedCall;
+  final IconData? icone;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(minimumSize: const Size(256, 64)),
-      onPressed: () {
-        formKey.currentState!.save();
-        if (formKey.currentState!.validate()) {
-          Modular.to.navigate(rota);
-        }
-      },
-      child: Text(
-        texto,
-        style: Theme.of(context).textTheme.headline1,
+      style: ElevatedButton.styleFrom(
+          //TODO: Botão adaptativo
+          minimumSize: const Size(256, 64),
+          primary: Theme.of(context).colorScheme.tertiary,
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.outline,
+          )),
+      //TODO: Corrigir chamada para aceitar argumento
+      onPressed: () => onPressedCall(),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //TODO: Corrigir cor
+          icone != null
+              ? Icon(
+                  icone,
+                  color: Colors.black,
+                )
+              : Container(),
+          Text(
+            texto,
+            style: Theme.of(context).textTheme.headline5,
+          ),
+        ],
       ),
     );
   }

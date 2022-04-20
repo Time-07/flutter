@@ -122,7 +122,7 @@ class _RegisterPageState
                   CustomElevatedButton(
                     rota: '/home',
                     texto: 'Cadastrar',
-                    formKey: _formKey,
+                    onPressedCall: controller.register,
                   ),
                   const SizedBox(height: 24),
                 ],
