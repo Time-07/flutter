@@ -14,6 +14,11 @@ class CustomUnderlineTextButton extends StatelessWidget {
       onPressed: () {
         Modular.to.navigate(rota);
       },
+      style: TextButton.styleFrom(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        minimumSize: Size.zero,
+        padding: EdgeInsets.zero,
+      ),
       child: Text(
         texto,
         style: Theme.of(context).textTheme.headline6!.copyWith(

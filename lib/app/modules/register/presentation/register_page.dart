@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
 import 'package:trans_app/app/widgets/custom_elevated_button.dart';
@@ -119,7 +118,6 @@ class _RegisterPageState
                       rota: '/', texto: 'Termos de Uso.'),
                   CustomElevatedButton(
                     texto: 'Cadastrar',
-                    formKey: _formKey,
                     onPressedCall: controller.register,
                   ),
                   const SizedBox(height: 24),

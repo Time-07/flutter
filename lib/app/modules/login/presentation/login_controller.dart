@@ -8,7 +8,8 @@ class LoginController {
   final ILogin _login;
   UserEntity usuarioLogado = UserEntity(email: "", password: "");
 
-  LoginController({required ILogin login,
+  LoginController({
+    required ILogin login,
   }) : _login = login;
 
   String? verificaEmailValido(String? emailDigitado) {
@@ -36,9 +37,9 @@ class LoginController {
     return null;
   }
 
-  login(){
+  login() {
     //TODO: chamar o modular navigate dentro do try
-      usuarioLogado = _login.call(email, senha) as UserEntity;
-      Modular.to.navigate('/home');
+    usuarioLogado = _login.call(email, senha) as UserEntity;
+    Modular.to.navigate('/home');
   }
 }

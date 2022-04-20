@@ -1,5 +1,3 @@
-import 'package:trans_app/app/modules/register/infra/repositories/models/roles_model.dart';
-
 import '../../../../../common/adapters/http_Client/http_client_adapter.dart';
 import '../../domain/entities/user_entity.dart';
 import '../repositories/datasources/register_datasource_interface.dart';
@@ -14,7 +12,7 @@ class RegisterDatasource extends IRegisterDatasource {
   @override
   Future<UserEntity> register(String name, String cpf, String email,
       String password, String gender) async {
-        print('chegou na RegisterDatasource');
+    print('chegou na RegisterDatasource');
     final responseRoles =
         await _httpClient.post('/roles', data: {'name': 'Trans'});
     final id = getIdFromRoles(responseRoles.data);

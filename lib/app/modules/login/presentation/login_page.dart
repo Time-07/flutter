@@ -66,10 +66,16 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               ),
               const SizedBox(height: 15),
               CustomElevatedButton(
-                texto: 'Entrar',
-                formKey: _formKey,
-                onPressedCall: controller.login,
-              ),
+                  texto: 'Entrar',
+                  onPressedCall: () {
+                    _formKey.currentState!.save();
+                    if (_formKey.currentState!.validate()) {
+                      controller.login.call();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Funcionou')),
+                      );
+                    }
+                  }),
               const SizedBox(height: 10),
               Text(
                 'Ainda não tem uma conta?',

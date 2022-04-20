@@ -5,9 +5,9 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      backgroundColor: Color(0xFFC4C4C4),
-      radius: 72,
+    return CircleAvatar(
+      //TODO: Adicionar imagem
+      backgroundColor: const Color(0xFFC4C4C4),
     );
   }
 }
