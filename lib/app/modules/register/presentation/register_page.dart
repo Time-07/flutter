@@ -29,7 +29,7 @@ class _RegisterPageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 30),
-                  const Logo(radius: 70),
+                  const Logo(),
                   const SizedBox(height: 24),
                   Text(
                     'Cadastro',
@@ -120,7 +120,6 @@ class _RegisterPageState
                     height: 15,
                   ),
                   CustomElevatedButton(
-                    rota: '/home',
                     texto: 'Cadastrar',
                     onPressedCall: controller.register,
                   ),

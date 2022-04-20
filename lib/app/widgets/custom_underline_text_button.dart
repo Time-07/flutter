@@ -11,6 +11,7 @@ class CustomUnderlineTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      // TODO: Ver qual o certo
       style: TextButton.styleFrom(
         minimumSize: Size.zero,
         padding: EdgeInsets.zero,
@@ -19,11 +20,11 @@ class CustomUnderlineTextButton extends StatelessWidget {
       onPressed: () {
         Modular.to.navigate(rota);
       },
-      style: TextButton.styleFrom(
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: Size.zero,
-        padding: EdgeInsets.zero,
-      ),
+      // style: TextButton.styleFrom(
+      //   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      //   minimumSize: Size.zero,
+      //   padding: EdgeInsets.zero,
+      // ),
       child: Text(
         texto,
         style: Theme.of(context).textTheme.headline6!.copyWith(

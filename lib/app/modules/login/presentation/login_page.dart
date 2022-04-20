@@ -26,7 +26,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              const Logo(radius: 70),
+              const Logo(),
               const SizedBox(height: 24),
               Text(
                 'Login',
