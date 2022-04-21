@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/home/home_module.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
+import 'package:trans_app/app/modules/search/search_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
 import '../common/adapters/http_Client/dio/dio_adapter.dart';
 import '../common/adapters/http_Client/dio/interceptors/dio_interceptors.dart';
@@ -28,8 +29,9 @@ class AppModule extends Module {
         ModuleRoute('/register', module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
         ModuleRoute('/home', module: HomeModule()),
-        ModuleRoute('/', module: SplashModule()),
+        ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/cadastro', module: RegisterModule()),
         ModuleRoute('/home', module: HomeModule()),
+        ModuleRoute('/', module: SearchModule()),
       ];
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/home/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:trans_app/app/widgets/custom_app_bar.dart';
 import 'package:trans_app/app/widgets/custom_elevated_button.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class PrePesquisa extends StatelessWidget {
+  const PrePesquisa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }
