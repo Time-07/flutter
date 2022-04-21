@@ -17,7 +17,6 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState
     extends ModularState<RegisterPage, RegisterController> {
   final _formKey = GlobalKey<FormState>();
-  final ValueNotifier<String> identidadeSelecionada = ValueNotifier('');
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +102,6 @@ class _RegisterPageState
                                     'Pessoa Trans Não-binária',
                                     'Outra Identidade'
                                   ],
-                                  identidadeSelecionada: identidadeSelecionada,
                                   titulo: 'Você se identifica como:',
                                 )),
                           ],
@@ -114,8 +112,12 @@ class _RegisterPageState
                     'Ao se cadastrar você concorda com nossos',
                     style: Theme.of(context).textTheme.headline6,
                   ),
-                  const CustomUnderlineTextButton(
-                      rota: '/', texto: 'Termos de Uso.'),
+                  CustomUnderlineTextButton(
+                    callback: () {
+                      Modular.to.navigate('/');
+                    },
+                    texto: 'Termos de Uso.',
+                  ),
                   const SizedBox(
                     height: 15,
                   ),

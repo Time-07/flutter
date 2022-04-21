@@ -57,11 +57,13 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 ),
               ),
               Row(
-                children: const [
+                children: [
                   Padding(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: const EdgeInsets.only(left: 30.0),
                       child: CustomUnderlineTextButton(
-                        rota: '/',
+                        callback: () {
+                          Modular.to.navigate('/');
+                        },
                         texto: 'Esqueci minha senha',
                       )),
                 ],
@@ -71,6 +73,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: CustomElevatedButton(
                     texto: 'Entrar',
+                    //TODO: Polir chamada
                     onPressedCall: () {
                       _formKey.currentState!.save();
                       if (_formKey.currentState!.validate()) {
@@ -86,8 +89,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 'Ainda não tem uma conta?',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              const CustomUnderlineTextButton(
-                rota: '/register',
+              CustomUnderlineTextButton(
+                callback: () {
+                  Modular.to.navigate('/register');
+                },
                 texto: 'Cadastre-se!',
               )
             ],

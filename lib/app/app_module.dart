@@ -31,7 +31,7 @@ class AppModule extends Module {
         ModuleRoute('/home', module: HomeModule()),
         ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/cadastro', module: RegisterModule()),
-        ModuleRoute('/home', module: HomeModule()),
-        ModuleRoute('/', module: SearchModule()),
+        ModuleRoute('/', module: HomeModule()),
+        ModuleRoute('/search', module: SearchModule()),
       ];
 }

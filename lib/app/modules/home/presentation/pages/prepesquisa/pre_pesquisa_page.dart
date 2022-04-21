@@ -18,11 +18,11 @@ class PrePesquisa extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Profissionais aliados e aliadas',
+                'Profissionais de saúde',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Use o botão Pesquisar para encontrar profissionais que se cadastraram com o compromisso de tratar (bem) pacientes trans.',
+                'Use o botão “Pesquisar” para encontrar profissionais que se cadastraram com o compromisso de tratar pacientes trans com respeito.',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
               const Divider(
@@ -35,15 +35,17 @@ class PrePesquisa extends StatelessWidget {
               CustomElevatedButton(
                 texto: 'Pesquisar',
                 icone: Icons.person_search,
-                onPressedCall: () {
-                  print('hello');
-                },
-              )
+                //TODO: Adicionar navegação
+                onPressedCall: () {},
+              ),
+              const SizedBox(height: 15),
+              const Image(image: AssetImage('assets/profissionais_home.png')),
+              const SizedBox(height: 15),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

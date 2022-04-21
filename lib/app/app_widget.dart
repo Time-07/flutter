@@ -23,6 +23,11 @@ class AppWidget extends StatelessWidget {
                 fontSize: 40.0,
                 fontWeight: FontWeight.w400,
                 color: Colors.black),
+            headline2: TextStyle(
+                fontFamily: 'Fredoka',
+                fontSize: 24.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.black),
             headline5: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 18.0,

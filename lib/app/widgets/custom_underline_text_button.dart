@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/widgets/custom_alert_dialog.dart';
 
 class CustomUnderlineTextButton extends StatelessWidget {
-  const CustomUnderlineTextButton(
-      {Key? key, required this.rota, required this.texto})
-      : super(key: key);
+  const CustomUnderlineTextButton({
+    Key? key,
+    required this.callback,
+    required this.texto,
+  }) : super(key: key);
   final String texto;
-  final String rota;
+  final Function callback;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +20,7 @@ class CustomUnderlineTextButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
-      onPressed: () {
-        Modular.to.navigate(rota);
-      },
-      // style: TextButton.styleFrom(
-      //   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      //   minimumSize: Size.zero,
-      //   padding: EdgeInsets.zero,
-      // ),
+      onPressed: () => callback(),
       child: Text(
         texto,
         style: Theme.of(context).textTheme.headline6!.copyWith(
