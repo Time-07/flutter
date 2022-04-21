@@ -12,9 +12,11 @@ class LoginDatasource extends ILoginDatasource {
   @override
   Future<UserModel> login(String email, String password) async {
     final response = await _httpClient
-        .post('/auth/login', data: {'email': email, 'password': password});
-    //print(response.data);
-    print(response.statusCode);
+        .post('auth/login', data: {'email': email, 'password': password});
+
+    if (response.statusCode != 200) {
+      throw Exception('Teste');
+    }
     var result = UserModel.fromJson(response.data);
     return result;
   }

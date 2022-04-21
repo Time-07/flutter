@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
 import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
+import 'package:trans_app/app/modules/login/presentation/login_store.dart';
 import 'package:trans_app/common/enums/status.dart';
 
 class LoginController {
+  final LoginStore store;
+  final ILogin _login;
+
+  LoginController({
+    required this.store,
+    required ILogin login,
+  }) : _login = login;
+
   String email = "";
   String senha = "";
-  final ILogin _login;
   UserEntity usuarioLogado = UserEntity(email: "", password: "");
   //criar enum loginStatus
-  final ValueNotifier<Status> loginStatus = ValueNotifier(Status.none);
-
-  LoginController({required ILogin login,
-  }) : _login = login;
 
   String? verificaEmailValido(String? emailDigitado) {
     if (emailDigitado == null || emailDigitado.isEmpty) {
@@ -40,17 +44,17 @@ class LoginController {
     return null;
   }
 
-  login(){
+  login() async {
     //TODO: chamar o modular navigate dentro do try
-    try{
-      loginStatus.value = Status.loading;
-      usuarioLogado = _login.call(email, senha) as UserEntity;
-      loginStatus.value = Status.succes;
+    try {
+      store.loginStatus.value = Status.loading;
+      usuarioLogado = await _login(email, senha);
+      store.loginStatus.value = Status.succes;
       Modular.to.navigate('/home');
-    }catch(_){
+    } catch (_) {
       //mostrar mensagem falha ao realizar login
-      //loginstatus.error
-      loginStatus.value = Status.error;
+      //store.loginstatus.error
+      store.loginStatus.value = Status.error;
     }
   }
 }

@@ -22,7 +22,7 @@ class AppModule extends Module {
     Bind.factory<CustomInterceptors>((i) => CustomInterceptors()),
     Bind.factory((i) => Dio(i())),
     Bind.factory<BaseOptions>((i) => BaseOptions(
-        baseUrl: 'https://camp-api-docker-v3.herokuapp.com/api/v1')),
+        baseUrl: 'https://camp-api-docker-v3.herokuapp.com/api/v1/')),
   ];
 
   @override
