@@ -45,11 +45,8 @@ class _ResultsPageState extends State<ResultsPage> {
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
                           return DoctorCard(
-                              name: widget.doctors[index].name,
-                              specialty: widget.doctors[index].specialty,
-                              value: widget.doctors[index].value,
-                              city: widget.doctors[index].city,
-                              state: widget.doctors[index].state);
+                            doctor: widget.doctors[index],
+                          );
                         })
                     : const NoDoctorsFound(),
               ],

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomLabelContainer extends StatelessWidget {
-  const CustomLabelContainer({Key? key, required this.text}) : super(key: key);
+  const CustomLabelContainer(
+      {Key? key, required this.text, this.checkMark = false})
+      : super(key: key);
 
   final String text;
+  final bool checkMark;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +23,14 @@ class CustomLabelContainer extends StatelessWidget {
           horizontal: 8.0,
           vertical: 4,
         ),
-        child: Text(
-          text,
-          style: Theme.of(context).textTheme.caption,
+        child: Row(
+          children: [
+            checkMark ? const Icon(Icons.check) : Container(),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.caption,
+            ),
+          ],
         ),
       ),
     );

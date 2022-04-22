@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/search/domain/entities/medico_entity.dart';
 import 'package:trans_app/app/widgets/custom_icon_text.dart';
 import 'package:trans_app/app/widgets/custom_label_container.dart';
 
 class DoctorCard extends StatelessWidget {
   const DoctorCard({
     Key? key,
-    required this.name,
-    required this.specialty,
-    required this.value,
-    required this.city,
-    required this.state,
+    required this.doctor,
   }) : super(key: key);
 
-  final String name;
-  final String specialty;
-  final double value;
-  final String city;
-  final String state;
+  final MedicoEntity doctor;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +38,7 @@ class DoctorCard extends StatelessWidget {
                       const SizedBox(width: 16),
                       Flexible(
                         child: Text(
-                          name,
+                          doctor.name,
                           style: Theme.of(context).textTheme.headline3,
                         ),
                       )
@@ -56,10 +50,10 @@ class DoctorCard extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomLabelContainer(text: specialty),
+                          CustomLabelContainer(text: doctor.specialty),
                           const SizedBox(height: 16),
                           CustomIconText(
-                              text: 'R\$ $value',
+                              text: 'R\$ ${doctor.value}',
                               icon: Icons.request_quote_outlined)
                         ],
                       ),
@@ -67,7 +61,7 @@ class DoctorCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomIconText(
-                            text: '$city\n$state',
+                            text: '${doctor.city}\n${doctor.state}',
                             icon: Icons.location_on,
                           ),
                           const SizedBox(height: 16),
@@ -83,19 +77,24 @@ class DoctorCard extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: Container(
-                    color: Theme.of(context).colorScheme.tertiary,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.person_search_rounded),
-                        Text(
-                          'Ver perfil',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                      ],
-                    )))
+                child: GestureDetector(
+              onTap: () {
+                Modular.to.navigate('/doctor', arguments: doctor);
+              },
+              child: Container(
+                  color: Theme.of(context).colorScheme.tertiary,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.person_search_rounded),
+                      Text(
+                        'Ver perfil',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ],
+                  )),
+            ))
           ],
         ),
       ),

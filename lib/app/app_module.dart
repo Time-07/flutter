@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/doctor/doctor_module.dart';
 import 'package:trans_app/app/modules/home/home_module.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
 import 'package:trans_app/app/modules/results/results_module.dart';
@@ -35,5 +36,6 @@ class AppModule extends Module {
         ModuleRoute('/search',
             module: SearchModule(), transition: TransitionType.downToUp),
         ModuleRoute('/results', module: ResultsModule()),
+        ModuleRoute('/doctor', module: DoctorModule()),
       ];
 }
