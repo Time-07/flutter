@@ -6,6 +6,7 @@ import 'package:trans_app/common/widgets/custom_text_form_field.dart';
 import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
 import 'package:trans_app/common/widgets/logo.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -17,6 +18,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   final _formKey = GlobalKey<FormState>();
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
@@ -46,14 +48,33 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         validar: controller.verificaEmailValido,
                         textInput: TextInputType.emailAddress,
                       ),
-                      const SizedBox(height: 15),
-                      CustomTextFormField(
-                        labelText: 'senha',
-                        validar: controller.verificaSenha,
-                        obscureText: true,
-                      )
-                    ],
-                  ),
+                    ),
+                    Row(
+                      children: const [
+                        Padding(
+                            padding: EdgeInsets.only(left: 30.0),
+                            child: CustomUnderlineTextButton(
+                              rota: '/',
+                              texto: 'Esqueci minha senha',
+                            )),
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    CustomElevatedButton(
+                      texto: 'Entrar',
+                      formKey: _formKey,
+                      onPressedCall: controller.login,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Ainda não tem uma conta?',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    const CustomUnderlineTextButton(
+                      rota: '/register',
+                      texto: 'Cadastre-se!',
+                    )
+                  ],
                 ),
               ),
               Row(

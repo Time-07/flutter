@@ -6,18 +6,21 @@ import 'package:trans_app/app/modules/login/infra/repositories/datasources/login
 import 'package:trans_app/app/modules/login/infra/repositories/login_repository.dart';
 import 'package:trans_app/app/modules/login/presentation/login_controller.dart';
 import 'package:trans_app/app/modules/login/presentation/login_page.dart';
+import 'package:trans_app/app/modules/login/presentation/login_store.dart';
 
 class LoginModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind.factory<ILoginDatasource>(((i) => LoginDatasource(httpClient: i()))),
-        Bind.factory<ILoginRepository>(((i) => LoginRepository(loginDatasource: i()))),
+        Bind.factory<ILoginDatasource>(
+            ((i) => LoginDatasource(httpClient: i()))),
+        Bind.factory<ILoginRepository>(
+            ((i) => LoginRepository(loginDatasource: i()))),
         Bind.factory<ILogin>((i) => Login(loginRepository: i())),
-        Bind.factory(
-          (i) => LoginController(
-            login: i(),
-          )
-        )
+        Bind.factory((i) => LoginController(
+              login: i(),
+              store: i(),
+            )),
+        Bind.factory((i) => LoginStore())
       ];
 
   @override

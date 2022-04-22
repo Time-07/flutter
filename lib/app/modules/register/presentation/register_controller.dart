@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../domain/usecases/register.dart';
@@ -8,6 +9,7 @@ class RegisterController {
   String senha = '';
   String identidade = '';
   String cpf = '';
+  ValueNotifier<String> identidadeSelecionada = ValueNotifier('');
 
   final IRegister _register;
 
@@ -107,8 +109,9 @@ class RegisterController {
 
   register() {
     try {
-      // var usuarioCadastrado =
-      //     _register.call(nome, cpf, email, senha, identidade);
+      var usuarioCadastrado =
+          _register.call(nome, cpf, email, senha, identidade);
+          print(usuarioCadastrado);
       Modular.to.navigate('/home');
     } on Exception catch (_) {
       throw Exception("Cadastro não realizado");

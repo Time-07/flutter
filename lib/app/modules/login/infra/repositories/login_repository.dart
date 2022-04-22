@@ -3,10 +3,11 @@ import 'package:trans_app/app/modules/login/domain/repositories/login_repository
 
 import 'datasources/login_datasource_interface.dart';
 
-class LoginRepository extends ILoginRepository{
+class LoginRepository extends ILoginRepository {
   final ILoginDatasource _loginDatasource;
 
-  LoginRepository({required ILoginDatasource loginDatasource}):_loginDatasource = loginDatasource;
+  LoginRepository({required ILoginDatasource loginDatasource})
+      : _loginDatasource = loginDatasource;
 
   @override
   Future<UserEntity> login(String email, String password) async {

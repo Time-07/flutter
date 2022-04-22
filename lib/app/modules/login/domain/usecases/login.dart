@@ -3,7 +3,7 @@ import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
 import 'package:trans_app/app/modules/login/domain/repositories/login_repository_interface.dart';
 
 abstract class ILogin {
-  Future call(String email, String password);
+  Future<UserEntity> call(String email, String password);
 }
 
 class Login extends ILogin {

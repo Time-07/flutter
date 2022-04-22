@@ -6,3 +6,4 @@ class SearchController {
   String city = '';
   String name = '';
 }
+

@@ -23,6 +23,7 @@ class AppModule extends Module {
         )),
     Bind.factory<CustomInterceptors>((i) => CustomInterceptors()),
     Bind.factory((i) => Dio(i())),
+
     Bind.factory<BaseOptions>((i) =>
         BaseOptions(baseUrl: 'https://diversaude-api.herokuapp.com/api/v1')),
   ];
