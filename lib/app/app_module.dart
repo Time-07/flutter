@@ -20,18 +20,17 @@ class AppModule extends Module {
         )),
     Bind.factory<CustomInterceptors>((i) => CustomInterceptors()),
     Bind.factory((i) => Dio(i())),
-    Bind.factory<BaseOptions>((i) => BaseOptions(
-        baseUrl: 'https://camp-api-docker-v3.herokuapp.com/api/v1')),
+    Bind.factory<BaseOptions>((i) =>
+        BaseOptions(baseUrl: 'https://diversaude-api.herokuapp.com/api/v1')),
   ];
 
   @override
   List<ModularRoute> get routes => [
         ModuleRoute('/register', module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
-        ModuleRoute('/home', module: HomeModule()),
+        ModuleRoute('/', module: HomeModule()),
         ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/cadastro', module: RegisterModule()),
-        ModuleRoute('/', module: HomeModule()),
         ModuleRoute('/search', module: SearchModule()),
       ];
 }

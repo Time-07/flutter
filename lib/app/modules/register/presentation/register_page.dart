@@ -129,9 +129,6 @@ class _RegisterPageState
                           _formKey.currentState!.save();
                           if (_formKey.currentState!.validate()) {
                             controller.register();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Funcionou')),
-                            );
                           }
                         }),
                   ),
