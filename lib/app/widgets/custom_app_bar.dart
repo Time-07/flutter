@@ -8,8 +8,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     this.height = kToolbarHeight,
+    this.backPage = false,
   }) : super(key: key);
   final double height;
+  final bool backPage;
 
   @override
   Size get preferredSize => Size.fromHeight(height);
@@ -25,8 +27,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Row(
               children: [
+                backPage
+                    ? GestureDetector(
+                        onTap: () {
+                          Modular.to.popAndPushNamed('/home');
+                        },
+                        child: const Icon(Icons.arrow_back))
+                    : Container(),
                 const Expanded(
-                  //TODO: Componentizar
                   child: Padding(
                     padding: EdgeInsets.only(left: 32.0),
                     child: SizedBox(
@@ -42,7 +50,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'Fulano',
+                      'Nome',
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     CustomUnderlineTextButton(
@@ -54,8 +62,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                                   tittle: 'Sair do app',
                                   description:
                                       'Gostaria de encerrar sua sessão? Selecionando “Sim” você retornará à tela de login.',
-                                  accept: 'Sim',
-                                  cancel: 'Não',
                                   callback: () {
                                     //TODO: Tirar o usuário do app
                                     Modular.to.navigate('/login');

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trans_app/app/modules/home/presentation/widgets/custom_bottom_nav_bar.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/widgets/custom_app_bar.dart';
+import 'package:trans_app/app/widgets/custom_bottom_nav_bar.dart';
 import 'package:trans_app/app/widgets/custom_elevated_button.dart';
 
 class PrePesquisa extends StatelessWidget {
@@ -36,10 +37,12 @@ class PrePesquisa extends StatelessWidget {
                 texto: 'Pesquisar',
                 icone: Icons.person_search,
                 //TODO: Adicionar navegação
-                onPressedCall: () {},
+                onPressedCall: () {
+                  Modular.to.navigate('/search');
+                },
               ),
               const SizedBox(height: 15),
-              const Image(image: AssetImage('assets/profissionais_home.png')),
+              const Image(image: AssetImage('assets/doctor_home.png')),
               const SizedBox(height: 15),
             ],
           ),

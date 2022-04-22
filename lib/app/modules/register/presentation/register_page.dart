@@ -133,6 +133,17 @@ class _RegisterPageState
                         }),
                   ),
                   const SizedBox(height: 24),
+                  Text(
+                    'Já tem uma conta?',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  CustomUnderlineTextButton(
+                    callback: () {
+                      Modular.to.navigate('/login');
+                    },
+                    texto: 'Faça login',
+                  ),
+                  const SizedBox(height: 24),
                 ],
               ),
             )));

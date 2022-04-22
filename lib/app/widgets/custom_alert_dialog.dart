@@ -6,22 +6,18 @@ class CustomAlertDialog extends StatelessWidget {
     required this.tittle,
     required this.description,
     required this.callback,
-    required this.accept,
-    required this.cancel,
   }) : super(key: key);
 
   final String tittle;
   final String description;
   final Function callback;
-  final String accept;
-  final String cancel;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(
         tittle,
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.headline3,
       ),
       content: Text(
         description,
@@ -36,7 +32,7 @@ class CustomAlertDialog extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Text(
-                  accept,
+                  'Sim',
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ),
@@ -49,7 +45,7 @@ class CustomAlertDialog extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Text(
-                  cancel,
+                  'Não',
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ),
