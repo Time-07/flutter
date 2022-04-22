@@ -88,6 +88,7 @@ class _RegisterPageState
                             ),
                             const SizedBox(height: 15),
                             Container(
+                                //TODO: Trocar cor
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: const Color(0xFFA4A4A4),

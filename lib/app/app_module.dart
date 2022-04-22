@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/doctor/doctor_module.dart';
 import 'package:trans_app/app/modules/home/home_module.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
+import 'package:trans_app/app/modules/onboarding/onboarding_module.dart';
 import 'package:trans_app/app/modules/results/results_module.dart';
 import 'package:trans_app/app/modules/search/search_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
@@ -28,7 +29,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/', module: SplashModule()),
+        ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/register', module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
         ModuleRoute('/home', module: HomeModule()),
@@ -37,5 +38,6 @@ class AppModule extends Module {
             module: SearchModule(), transition: TransitionType.downToUp),
         ModuleRoute('/results', module: ResultsModule()),
         ModuleRoute('/doctor', module: DoctorModule()),
+        ModuleRoute('/', module: OnboardingModule()),
       ];
 }
