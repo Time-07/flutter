@@ -8,7 +8,6 @@ class RegisterDatasource extends IRegisterDatasource {
 
   RegisterDatasource({required httpClient}) : _httpClient = httpClient;
 
-  //TODO: Receber  email e nome como parametro
   @override
   Future<UserEntity> register(String name, String cpf, String email,
       String password, String gender) async {

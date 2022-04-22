@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/home/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:trans_app/app/widgets/custom_app_bar.dart';
 import 'package:trans_app/app/widgets/custom_elevated_button.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class PrePesquisa extends StatelessWidget {
+  const PrePesquisa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Profissionais aliados e aliadas',
+                'Profissionais de saúde',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Use o botão Pesquisar para encontrar profissionais que se cadastraram com o compromisso de tratar (bem) pacientes trans.',
+                'Use o botão “Pesquisar” para encontrar profissionais que se cadastraram com o compromisso de tratar pacientes trans com respeito.',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
               const Divider(
@@ -35,14 +35,17 @@ class HomePage extends StatelessWidget {
               CustomElevatedButton(
                 texto: 'Pesquisar',
                 icone: Icons.person_search,
-                onPressedCall: () {
-                  print('hello');
-                },
-              )
+                //TODO: Adicionar navegação
+                onPressedCall: () {},
+              ),
+              const SizedBox(height: 15),
+              const Image(image: AssetImage('assets/profissionais_home.png')),
+              const SizedBox(height: 15),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

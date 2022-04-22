@@ -5,13 +5,11 @@ class CustomRadialList extends StatelessWidget {
   const CustomRadialList({
     Key? key,
     required this.opcoes,
-    required this.identidadeSelecionada,
     required this.titulo,
     required this.validar,
   }) : super(key: key);
   final List<String> opcoes;
   final String titulo;
-  final ValueNotifier<String> identidadeSelecionada;
   final String? Function(String?) validar;
 
   @override

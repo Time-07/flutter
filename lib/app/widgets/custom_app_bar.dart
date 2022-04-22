@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/widgets/custom_alert_dialog.dart';
 import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
 import 'package:trans_app/app/widgets/logo.dart';
 
@@ -43,7 +45,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       'Fulano',
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
-                    const CustomUnderlineTextButton(rota: '/', texto: 'Sair')
+                    CustomUnderlineTextButton(
+                      callback: () {
+                        showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) =>
+                                CustomAlertDialog(
+                                  tittle: 'Sair do app',
+                                  description:
+                                      'Gostaria de encerrar sua sessão? Selecionando “Sim” você retornará à tela de login.',
+                                  accept: 'Sim',
+                                  cancel: 'Não',
+                                  callback: () {
+                                    //TODO: Tirar o usuário do app
+                                    Modular.to.navigate('/login');
+                                  },
+                                ));
+                      },
+                      texto: 'Sair',
+                    ),
                   ],
                 )
               ],

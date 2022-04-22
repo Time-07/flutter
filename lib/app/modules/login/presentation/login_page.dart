@@ -57,11 +57,13 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 ),
               ),
               Row(
-                children: const [
+                children: [
                   Padding(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: const EdgeInsets.only(left: 30.0),
                       child: CustomUnderlineTextButton(
-                        rota: '/',
+                        callback: () {
+                          Modular.to.navigate('/');
+                        },
                         texto: 'Esqueci minha senha',
                       )),
                 ],
@@ -75,9 +77,6 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       _formKey.currentState!.save();
                       if (_formKey.currentState!.validate()) {
                         controller.login.call();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Funcionou')),
-                        );
                       }
                     }),
               ),
@@ -86,8 +85,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 'Ainda não tem uma conta?',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              const CustomUnderlineTextButton(
-                rota: '/register',
+              CustomUnderlineTextButton(
+                callback: () {
+                  Modular.to.navigate('/register');
+                },
                 texto: 'Cadastre-se!',
               )
             ],
