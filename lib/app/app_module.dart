@@ -38,6 +38,7 @@ class AppModule extends Module {
             module: SearchModule(), transition: TransitionType.downToUp),
         ModuleRoute('/results', module: ResultsModule()),
         ModuleRoute('/doctor', module: DoctorModule()),
-        ModuleRoute('/', module: OnboardingModule()),
+        ModuleRoute('/onboarding', module: OnboardingModule()),
+        ModuleRoute('/', module: HomeModule()),
       ];
 }

@@ -52,7 +52,6 @@ class _ResultsPageState extends State<ResultsPage> {
               ],
             )),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

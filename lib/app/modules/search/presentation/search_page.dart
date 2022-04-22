@@ -104,7 +104,6 @@ class _SearchPageState extends ModularState<SearchPage, SearchController> {
                     suffixIcon: Icon(Icons.search)),
               ),
               const SizedBox(height: 30),
-              //TODO: Adicionar navegação
               CustomElevatedButton(
                   texto: 'Pesquisar',
                   onPressedCall: () {
@@ -115,7 +114,6 @@ class _SearchPageState extends ModularState<SearchPage, SearchController> {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }
