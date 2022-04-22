@@ -186,7 +186,6 @@ class _DoctorPageState extends ModularState<DoctorPage, DoctorController> {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }
