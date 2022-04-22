@@ -1,3 +1,3 @@
 class SearchController {
-  
+  String especialidade = '';
 }

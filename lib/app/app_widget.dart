@@ -16,6 +16,7 @@ class AppWidget extends StatelessWidget {
                 tertiary: const Color(0xFFFCF1F3),
                 outline: const Color(0xFFF5A9B8),
                 primaryVariant: const Color(0xFF111111),
+                secondaryVariant: const Color(0xFFDFB0F2),
               ),
           textTheme: const TextTheme(
             headline1: TextStyle(
@@ -24,6 +25,11 @@ class AppWidget extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 color: Colors.black),
             headline2: TextStyle(
+                fontFamily: 'Fredoka',
+                fontSize: 36.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.black),
+            headline3: TextStyle(
                 fontFamily: 'Fredoka',
                 fontSize: 24.0,
                 fontWeight: FontWeight.w400,

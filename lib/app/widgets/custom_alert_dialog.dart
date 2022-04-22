@@ -21,7 +21,7 @@ class CustomAlertDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(
         tittle,
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.headline3,
       ),
       content: Text(
         description,

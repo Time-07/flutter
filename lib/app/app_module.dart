@@ -28,9 +28,9 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ModuleRoute('/register', module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
-        ModuleRoute('/', module: HomeModule()),
+        ModuleRoute('/home', module: HomeModule()),
         ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/cadastro', module: RegisterModule()),
-        ModuleRoute('/search', module: SearchModule()),
+        ModuleRoute('/', module: SearchModule()),
       ];
 }
