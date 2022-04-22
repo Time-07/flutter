@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
 import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
@@ -11,7 +10,6 @@ class LoginController {
 
   LoginController({
     required this.store,
-
     required ILogin login,
   }) : _login = login;
 
@@ -46,11 +44,10 @@ class LoginController {
   }
 
   login() async {
-    //TODO: chamar o modular navigate dentro do try
     try {
-      store.loginStatus.value = Status.loading;
-      usuarioLogado = await _login(email, senha);
-      store.loginStatus.value = Status.succes;
+      // store.loginStatus.value = Status.loading;
+      // usuarioLogado = await _login(email, senha);
+      // store.loginStatus.value = Status.succes;
       Modular.to.navigate('/home');
     } catch (_) {
       //mostrar mensagem falha ao realizar login

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:trans_app/app/modules/search/domain/entities/medico_entity.dart';
 
 class MockDoctors {

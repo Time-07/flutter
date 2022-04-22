@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/mock/mock_doctors.dart';
 import 'package:trans_app/app/modules/search/presentation/search_controller.dart';
 import 'package:trans_app/app/modules/search/presentation/widgets/Custom_list_view.dart';
 import 'package:trans_app/app/modules/search/presentation/widgets/custom_search_appbar.dart';
-import 'package:trans_app/app/utils/mock_doctors.dart';
 import 'package:trans_app/common/widgets/custom_elevated_button.dart';
 
 class SearchPage extends StatefulWidget {

@@ -109,9 +109,9 @@ class RegisterController {
 
   register() {
     try {
-      var usuarioCadastrado =
-          _register.call(nome, cpf, email, senha, identidade);
-          print(usuarioCadastrado);
+      // var usuarioCadastrado =
+      //     _register.call(nome, cpf, email, senha, identidade);
+      //     print(usuarioCadastrado);
       Modular.to.navigate('/home');
     } on Exception catch (_) {
       throw Exception("Cadastro não realizado");
