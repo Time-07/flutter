@@ -73,14 +73,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: CustomElevatedButton(
                     texto: 'Entrar',
-                    //TODO: Polir chamada
                     onPressedCall: () {
                       _formKey.currentState!.save();
                       if (_formKey.currentState!.validate()) {
                         controller.login.call();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Funcionou')),
-                        );
                       }
                     }),
               ),

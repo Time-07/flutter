@@ -106,7 +106,6 @@ class RegisterController {
   }
 
   register() {
-    //TODO: cpf não está vindo do front
     try {
       var usuarioCadastrado =
           _register.call(nome, cpf, email, senha, identidade);

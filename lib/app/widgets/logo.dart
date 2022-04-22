@@ -10,9 +10,9 @@ class Logo extends StatelessWidget {
     return SizedBox(
       width: tamanho,
       height: tamanho,
-      child: CircleAvatar(
+      child: const CircleAvatar(
         //TODO: Adicionar imagem
-        backgroundColor: const Color(0xFFC4C4C4),
+        backgroundColor: Color(0xFFC4C4C4),
       ),
     );
   }

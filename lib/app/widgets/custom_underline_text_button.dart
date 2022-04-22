@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/widgets/custom_alert_dialog.dart';
 
 class CustomUnderlineTextButton extends StatelessWidget {
   const CustomUnderlineTextButton({
@@ -14,7 +12,6 @@ class CustomUnderlineTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      // TODO: Ver qual o certo
       style: TextButton.styleFrom(
         minimumSize: Size.zero,
         padding: EdgeInsets.zero,

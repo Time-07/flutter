@@ -38,7 +38,6 @@ class LoginController {
   }
 
   login() {
-    //TODO: chamar o modular navigate dentro do try
     usuarioLogado = _login.call(email, senha) as UserEntity;
     Modular.to.navigate('/home');
   }
