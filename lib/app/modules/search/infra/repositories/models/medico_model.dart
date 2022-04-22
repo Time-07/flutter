@@ -21,8 +21,10 @@ class MedicoModel extends MedicoEntity {
       required String courses,
       required String healthPlan,
       required bool bathroomSpecific,
-      required String linkedin})
+      required String linkedin,
+      required String photo})
       : super(
+            photo: photo,
             name: name,
             email: email,
             password: password,

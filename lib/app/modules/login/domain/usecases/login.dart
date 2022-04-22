@@ -12,7 +12,6 @@ class Login extends ILogin {
   Login({required ILoginRepository loginRepository})
       : _loginRepository = loginRepository;
 
-  //TODO : verificar resposta do login
   @override
   Future<UserEntity> call(String email, String password) async {
     var user = await _loginRepository.login(email, password);

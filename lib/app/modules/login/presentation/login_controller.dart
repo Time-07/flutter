@@ -11,6 +11,7 @@ class LoginController {
 
   LoginController({
     required this.store,
+
     required ILogin login,
   }) : _login = login;
 

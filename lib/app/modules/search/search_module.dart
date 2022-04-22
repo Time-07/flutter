@@ -10,12 +10,13 @@ import 'package:trans_app/app/modules/search/presentation/search_page.dart';
 class SearchModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind.factory<ISearchDatasource>(((i) => SearchDataSource(httpClient: i()))),
-        Bind.factory<ISearchRepository>(((i) => SearchRepository(searchDatasource: i()))),
+        Bind.factory<ISearchDatasource>(
+            ((i) => SearchDataSource(httpClient: i()))),
+        Bind.factory<ISearchRepository>(
+            ((i) => SearchRepository(searchDatasource: i()))),
         Bind.factory<ISearch>((i) => Search(searchRepository: i())),
         Bind.factory(
-          (i) => SearchController(
-          ),
+          (i) => SearchController(),
         ),
       ];
 

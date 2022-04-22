@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
-import 'package:trans_app/app/widgets/custom_radial_list.dart';
-import 'package:trans_app/app/widgets/custom_text_form_field.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_radial_list.dart';
+import 'package:trans_app/common/widgets/custom_text_form_field.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -29,7 +28,7 @@ class _RegisterPageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 30),
-                  const Logo(),
+                  const Logo(tamanho: 120),
                   const SizedBox(height: 24),
                   Text(
                     'Cadastro',
@@ -103,7 +102,6 @@ class _RegisterPageState
                                     'Pessoa Trans Não-binária',
                                     'Outra Identidade'
                                   ],
-                                  identidadeSelecionada: controller.identidadeSelecionada,
                                   titulo: 'Você se identifica como:',
                                 )),
                           ],
@@ -114,12 +112,36 @@ class _RegisterPageState
                     'Ao se cadastrar você concorda com nossos',
                     style: Theme.of(context).textTheme.headline6,
                   ),
-                  const CustomUnderlineTextButton(
-                      rota: '/', texto: 'Termos de Uso.'),
-                  CustomElevatedButton(
-                    texto: 'Cadastrar',
-                    formKey: _formKey,
-                    onPressedCall: controller.register,
+                  CustomUnderlineTextButton(
+                    callback: () {
+                      Modular.to.navigate('/');
+                    },
+                    texto: 'Termos de Uso.',
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                    child: CustomElevatedButton(
+                        texto: 'Entrar',
+                        onPressedCall: () {
+                          _formKey.currentState!.save();
+                          if (_formKey.currentState!.validate()) {
+                            controller.register();
+                          }
+                        }),
+                  ),
+                  const SizedBox(height: 24),
+                  Text(
+                    'Já tem uma conta?',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  CustomUnderlineTextButton(
+                    callback: () {
+                      Modular.to.navigate('/login');
+                    },
+                    texto: 'Faça login',
                   ),
                   const SizedBox(height: 24),
                 ],

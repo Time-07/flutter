@@ -108,8 +108,6 @@ class RegisterController {
   }
 
   register() {
-    //TODO: cpf não está vindo do front
-    //TODO: chamar o modular navigate dentro do try
     try {
       var usuarioCadastrado =
           _register.call(nome, cpf, email, senha, identidade);
