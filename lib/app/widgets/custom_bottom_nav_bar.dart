@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trans_app/app/modules/home/presentation/widgets/custom_bottom_nav_item.dart';
+import 'package:trans_app/app/widgets/custom_bottom_nav_item.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({Key? key}) : super(key: key);

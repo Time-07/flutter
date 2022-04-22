@@ -15,6 +15,8 @@ class AppWidget extends StatelessWidget {
                 secondary: const Color(0xFF744D83),
                 tertiary: const Color(0xFFFCF1F3),
                 outline: const Color(0xFFF5A9B8),
+                inverseSurface: const Color(0xFF38829F),
+                inversePrimary: const Color(0xFFE8F6FB),
                 primaryVariant: const Color(0xFF111111),
                 secondaryVariant: const Color(0xFFDFB0F2),
               ),
@@ -43,6 +45,12 @@ class AppWidget extends StatelessWidget {
               fontFamily: 'Inter',
               fontSize: 14.0,
               fontWeight: FontWeight.w400,
+            ),
+            caption: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
             bodyText1: TextStyle(
               fontFamily: 'Inter',

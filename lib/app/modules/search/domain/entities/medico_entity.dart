@@ -20,8 +20,8 @@ class MedicoEntity {
   final bool bathroomSpecific;
   final String linkedin;
 
-  MedicoEntity({
-      required this.name,
+  MedicoEntity(
+      {required this.name,
       required this.email,
       required this.password,
       required this.cpf,

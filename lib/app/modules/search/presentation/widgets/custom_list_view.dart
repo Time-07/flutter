@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:trans_app/app/modules/search/presentation/search_controller.dart';
 
 class CustomListView extends StatefulWidget {
   CustomListView({
     Key? key,
     required this.list,
-    required this.controller,
+    required this.option,
   }) : super(key: key);
 
   final List<String> list;
-  SearchController controller;
+  ValueNotifier<String> option;
 
   @override
   State<CustomListView> createState() => _CustomListViewState();
@@ -27,7 +26,7 @@ class _CustomListViewState extends State<CustomListView> {
           ...widget.list.map(
             (item) => Container(
               decoration: BoxDecoration(
-                  color: widget.controller.especialidade == item
+                  color: widget.option.value == item
                       ? Theme.of(context).colorScheme.secondaryVariant
                       : Theme.of(context).colorScheme.primary,
                   border: Border.all(
@@ -36,7 +35,7 @@ class _CustomListViewState extends State<CustomListView> {
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    widget.controller.especialidade = item;
+                    widget.option.value = item;
                   });
                 },
                 child: Padding(
@@ -46,7 +45,7 @@ class _CustomListViewState extends State<CustomListView> {
                   ),
                   child: Row(
                     children: [
-                      widget.controller.especialidade == item
+                      widget.option.value == item
                           ? const Icon(
                               Icons.check,
                               size: 15,

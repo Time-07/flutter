@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/home/home_module.dart';
 import 'package:trans_app/app/modules/login/login_module.dart';
+import 'package:trans_app/app/modules/results/results_module.dart';
 import 'package:trans_app/app/modules/search/search_module.dart';
 import 'package:trans_app/app/modules/splash/splash_module.dart';
 import '../common/adapters/http_Client/dio/dio_adapter.dart';
@@ -26,11 +27,13 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
+        ModuleRoute('/splash', module: SplashModule()),
         ModuleRoute('/register', module: RegisterModule()),
         ModuleRoute('/login', module: LoginModule()),
-        ModuleRoute('/home', module: HomeModule()),
-        ModuleRoute('/splash', module: SplashModule()),
+        ModuleRoute('/', module: HomeModule()),
         ModuleRoute('/cadastro', module: RegisterModule()),
-        ModuleRoute('/', module: SearchModule()),
+        ModuleRoute('/search',
+            module: SearchModule(), transition: TransitionType.downToUp),
+        ModuleRoute('/results', module: ResultsModule()),
       ];
 }

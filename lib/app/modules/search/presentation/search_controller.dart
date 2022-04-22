@@ -1,3 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 class SearchController {
-  String especialidade = '';
+  ValueNotifier<String> specialty = ValueNotifier('');
+  ValueNotifier<String> gender = ValueNotifier('');
+  String city = '';
+  String name = '';
 }

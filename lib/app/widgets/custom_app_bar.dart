@@ -54,8 +54,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                                   tittle: 'Sair do app',
                                   description:
                                       'Gostaria de encerrar sua sessão? Selecionando “Sim” você retornará à tela de login.',
-                                  accept: 'Sim',
-                                  cancel: 'Não',
                                   callback: () {
                                     //TODO: Tirar o usuário do app
                                     Modular.to.navigate('/login');
