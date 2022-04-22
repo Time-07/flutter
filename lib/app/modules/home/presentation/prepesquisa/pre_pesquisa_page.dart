@@ -42,7 +42,7 @@ class PrePesquisa extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 15),
-              const Image(image: AssetImage('assets/profissionais_home.png')),
+              const Image(image: AssetImage('assets/doctor_home.png')),
               const SizedBox(height: 15),
             ],
           ),

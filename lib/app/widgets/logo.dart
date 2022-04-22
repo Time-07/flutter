@@ -8,12 +8,10 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: tamanho,
-      height: tamanho,
-      child: const CircleAvatar(
-        //TODO: Adicionar imagem
-        backgroundColor: Color(0xFFC4C4C4),
-      ),
-    );
+        width: tamanho,
+        height: tamanho,
+        child: const Image(
+          image: AssetImage('assets/medium_logo.png'),
+        ));
   }
 }

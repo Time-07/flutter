@@ -24,7 +24,7 @@ class NoDoctorsFound extends StatelessWidget {
             child: const CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: 100,
-              backgroundImage: AssetImage('assets/nao_encontrado.png'),
+              backgroundImage: AssetImage('assets/not_found.png'),
             ),
           ),
         ),

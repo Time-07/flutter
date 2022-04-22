@@ -23,6 +23,7 @@ class _DoctorPageState extends ModularState<DoctorPage, DoctorController> {
     return Scaffold(
       appBar: const CustomAppBar(
         height: 90,
+        backPage: true,
       ),
       body: SingleChildScrollView(
         controller: controller.pageController,
