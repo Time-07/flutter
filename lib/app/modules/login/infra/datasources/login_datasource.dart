@@ -11,8 +11,7 @@ class LoginDatasource extends ILoginDatasource {
   Future<UserModel> login(String email, String password) async {
     final response = await _httpClient
         .post('/auth/login', data: {'email': email, 'password': password});
-    //print(response.data);
-    print(response.statusCode);
+
     var result = UserModel.fromJson(response.data);
     return result;
   }

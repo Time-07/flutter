@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
 
 class PrePesquisa extends StatelessWidget {
   const PrePesquisa({Key? key}) : super(key: key);

@@ -38,7 +38,6 @@ class LoginController {
   }
 
   login() {
-    //TODO: Desativado
     //usuarioLogado = _login.call(email, senha) as UserEntity;
     Modular.to.navigate('/home');
   }

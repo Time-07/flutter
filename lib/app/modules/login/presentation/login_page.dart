@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/presentation/login_controller.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
-import 'package:trans_app/app/widgets/custom_text_form_field.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_text_form_field.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

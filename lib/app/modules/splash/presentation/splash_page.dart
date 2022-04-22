@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 import 'splash_controller.dart';
 

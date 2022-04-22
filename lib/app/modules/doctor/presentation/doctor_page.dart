@@ -3,14 +3,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/doctor/presentation/doctor_controller.dart';
 import 'package:trans_app/app/modules/doctor/presentation/widgets/custom_contact.dart';
 import 'package:trans_app/app/modules/search/domain/entities/medico_entity.dart';
-import 'package:trans_app/app/widgets/custom_app_bar.dart';
-import 'package:trans_app/app/widgets/custom_bottom_nav_bar.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
-import 'package:trans_app/app/widgets/custom_icon_text.dart';
-import 'package:trans_app/app/widgets/custom_label_container.dart';
+import 'package:trans_app/common/widgets/custom_app_bar.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_icon_text.dart';
+import 'package:trans_app/common/widgets/custom_label_container.dart';
 
 class DoctorPage extends StatefulWidget {
-  DoctorPage({Key? key, required this.doctor}) : super(key: key);
+  const DoctorPage({Key? key, required this.doctor}) : super(key: key);
   final MedicoEntity doctor;
 
   @override
@@ -47,7 +46,7 @@ class _DoctorPageState extends ModularState<DoctorPage, DoctorController> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomLabelContainer(text: widget.doctor.specialty),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   'CRM: ${widget.doctor.crmCrp}',
                   style: Theme.of(context).textTheme.headline6,
@@ -137,7 +136,7 @@ class _DoctorPageState extends ModularState<DoctorPage, DoctorController> {
             ),
             Divider(color: Theme.of(context).colorScheme.primary, thickness: 2),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

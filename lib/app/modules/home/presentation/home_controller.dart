@@ -7,9 +7,9 @@ class HomeController {
 
   Widget rendePage() {
     if (page.value == 0) {
-      return PrePesquisa();
+      return const PrePesquisa();
     }
 
-    return SobrePage();
+    return const SobrePage();
   }
 }

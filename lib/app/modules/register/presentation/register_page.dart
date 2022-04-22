@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/register/presentation/register_controller.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
-import 'package:trans_app/app/widgets/custom_radial_list.dart';
-import 'package:trans_app/app/widgets/custom_text_form_field.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_radial_list.dart';
+import 'package:trans_app/common/widgets/custom_text_form_field.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -88,7 +88,6 @@ class _RegisterPageState
                             ),
                             const SizedBox(height: 15),
                             Container(
-                                //TODO: Trocar cor
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: const Color(0xFFA4A4A4),

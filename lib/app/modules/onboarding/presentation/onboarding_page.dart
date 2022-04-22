@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/onboarding/presentation/onboarding_controller.dart';
 import 'package:trans_app/app/modules/onboarding/presentation/widgets/custom_page.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({Key? key}) : super(key: key);

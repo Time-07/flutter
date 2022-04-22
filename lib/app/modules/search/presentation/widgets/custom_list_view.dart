@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomListView extends StatefulWidget {
-  CustomListView({
+  const CustomListView({
     Key? key,
     required this.list,
     required this.option,
   }) : super(key: key);
 
   final List<String> list;
-  ValueNotifier<String> option;
+  final ValueNotifier<String> option;
 
   @override
   State<CustomListView> createState() => _CustomListViewState();

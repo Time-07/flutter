@@ -22,12 +22,10 @@ class CustomElevatedButton extends StatelessWidget {
           side: BorderSide(
             color: Theme.of(context).colorScheme.outline,
           )),
-      //TODO: Corrigir chamada para aceitar argumento
       onPressed: () => onPressedCall(),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //TODO: Corrigir cor
           icone != null
               ? Icon(
                   icone,

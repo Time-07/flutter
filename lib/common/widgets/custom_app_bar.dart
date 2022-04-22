@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/widgets/custom_alert_dialog.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/custom_alert_dialog.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -63,7 +63,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                                   description:
                                       'Gostaria de encerrar sua sessão? Selecionando “Sim” você retornará à tela de login.',
                                   callback: () {
-                                    //TODO: Tirar o usuário do app
                                     Modular.to.navigate('/login');
                                   },
                                 ));

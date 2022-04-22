@@ -12,7 +12,6 @@ class Login extends ILogin {
   Login({required ILoginRepository loginRepository})
       : _loginRepository = loginRepository;
 
-  //TODO : verificar resposta do login
   @override
   Future<UserEntity> call(String email, String password) async {
     var user = await _loginRepository.login(email, password);
@@ -20,12 +19,11 @@ class Login extends ILogin {
     return UserEntity(email: user.email, password: user.password);
   }
 
-  savePref (String email, String password) async {
-     SharedPreferences preferences = await SharedPreferences . getInstance ();
+  savePref(String email, String password) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
 
-      preferences .setString( "email" , email);
-      preferences .setString( "password" , password);
-      preferences .commit();
-
+    preferences.setString("email", email);
+    preferences.setString("password", password);
+    preferences.commit();
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/home/presentation/home_controller.dart';
-import 'package:trans_app/app/widgets/custom_app_bar.dart';
-import 'package:trans_app/app/widgets/custom_bottom_nav_bar.dart';
+import 'package:trans_app/common/widgets/custom_app_bar.dart';
+import 'package:trans_app/common/widgets/custom_bottom_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

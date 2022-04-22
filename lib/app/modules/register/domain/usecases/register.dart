@@ -13,7 +13,6 @@ class Register extends IRegister {
   Register({required IRegisterRepository registerRepository})
       : _registerRepository = registerRepository;
 
-  //TODO : verificar resposta do login
   @override
   Future<UserEntity> call(String name, String cpf, String email,
       String password, String gender) async {

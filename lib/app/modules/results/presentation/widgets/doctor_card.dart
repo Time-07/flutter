@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/search/domain/entities/medico_entity.dart';
-import 'package:trans_app/app/widgets/custom_icon_text.dart';
-import 'package:trans_app/app/widgets/custom_label_container.dart';
+import 'package:trans_app/common/widgets/custom_icon_text.dart';
+import 'package:trans_app/common/widgets/custom_label_container.dart';
 
 class DoctorCard extends StatelessWidget {
   const DoctorCard({

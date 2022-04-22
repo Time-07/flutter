@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:trans_app/app/widgets/custom_alert_dialog.dart';
+import 'package:trans_app/common/widgets/custom_alert_dialog.dart';
 
 class CustomSearchAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -26,9 +26,7 @@ class CustomSearchAppBar extends StatelessWidget
       ),
       actions: [
         IconButton(
-            //TODO: Adicionar navegação
             onPressed: () {
-              print('hello');
               showDialog<String>(
                   context: context,
                   builder: (BuildContext context) => CustomAlertDialog(
