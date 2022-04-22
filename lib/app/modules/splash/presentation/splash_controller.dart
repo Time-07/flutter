@@ -4,6 +4,6 @@ class SplashController {
   load() async {
     await Future.delayed(const Duration(seconds: 2));
 
-    Modular.to.navigate('/login');
+    Modular.to.navigate('/login/');
   }
 }
