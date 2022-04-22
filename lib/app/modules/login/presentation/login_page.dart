@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:trans_app/app/modules/login/presentation/login_controller.dart';
-import 'package:trans_app/app/widgets/custom_elevated_button.dart';
-import 'package:trans_app/app/widgets/custom_text_form_field.dart';
-import 'package:trans_app/app/widgets/custom_underline_text_button.dart';
-import 'package:trans_app/app/widgets/logo.dart';
+import 'package:trans_app/common/widgets/custom_elevated_button.dart';
+import 'package:trans_app/common/widgets/custom_text_form_field.dart';
+import 'package:trans_app/common/widgets/custom_underline_text_button.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -26,7 +26,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              const Logo(),
+              const Logo(
+                tamanho: 120,
+              ),
               const SizedBox(height: 24),
               Text(
                 'Login',
@@ -42,6 +44,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       CustomTextFormField(
                         labelText: 'email',
                         validar: controller.verificaEmailValido,
+                        textInput: TextInputType.emailAddress,
                       ),
                       const SizedBox(height: 15),
                       CustomTextFormField(
@@ -54,27 +57,38 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 ),
               ),
               Row(
-                children: const [
+                children: [
                   Padding(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: const EdgeInsets.only(left: 30.0),
                       child: CustomUnderlineTextButton(
-                        rota: '/',
+                        callback: () {
+                          Modular.to.navigate('/');
+                        },
                         texto: 'Esqueci minha senha',
                       )),
                 ],
               ),
               const SizedBox(height: 15),
-              CustomElevatedButton(
-                texto: 'Entrar',
-                formKey: _formKey,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: CustomElevatedButton(
+                    texto: 'Entrar',
+                    onPressedCall: () {
+                      _formKey.currentState!.save();
+                      if (_formKey.currentState!.validate()) {
+                        controller.login.call();
+                      }
+                    }),
               ),
               const SizedBox(height: 10),
               Text(
                 'Ainda não tem uma conta?',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              const CustomUnderlineTextButton(
-                rota: '/cadastro',
+              CustomUnderlineTextButton(
+                callback: () {
+                  Modular.to.navigate('/register');
+                },
                 texto: 'Cadastre-se!',
               )
             ],

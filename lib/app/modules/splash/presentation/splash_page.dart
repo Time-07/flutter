@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/common/widgets/logo.dart';
 
 import 'splash_controller.dart';
 
@@ -29,18 +30,15 @@ class _SplashPageState extends ModularState<SplashPage, SplashController> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 320,
-                height: 110,
-                alignment: Alignment.center,
-                child: const Text(
-                  'Trans Care',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.bold),
-                ),
+              Column(
+                children: [
+                  const Logo(tamanho: 120),
+                  Text(
+                    'DiverSaúde',
+                    style: Theme.of(context).textTheme.headline1!.copyWith(
+                        color: Theme.of(context).colorScheme.secondary),
+                  ),
+                ],
               ),
             ],
           ),

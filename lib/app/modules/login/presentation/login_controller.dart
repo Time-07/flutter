@@ -1,6 +1,22 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
+import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
+import 'package:trans_app/app/modules/login/presentation/login_store.dart';
+import 'package:trans_app/common/enums/status.dart';
+
 class LoginController {
+  final LoginStore store;
+  final ILogin _login;
+
+  LoginController({
+    required this.store,
+    required ILogin login,
+  }) : _login = login;
+
   String email = "";
   String senha = "";
+  UserEntity usuarioLogado = UserEntity(email: "", password: "");
+  //criar enum loginStatus
 
   String? verificaEmailValido(String? emailDigitado) {
     if (emailDigitado == null || emailDigitado.isEmpty) {
@@ -25,5 +41,18 @@ class LoginController {
 
     senha = senhaDigitada;
     return null;
+  }
+
+  login() async {
+    try {
+      // store.loginStatus.value = Status.loading;
+      // usuarioLogado = await _login(email, senha);
+      // store.loginStatus.value = Status.succes;
+      Modular.to.navigate('/home');
+    } catch (_) {
+      //mostrar mensagem falha ao realizar login
+      //store.loginstatus.error
+      store.loginStatus.value = Status.error;
+    }
   }
 }
