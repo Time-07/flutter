@@ -1,6 +1,16 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:trans_app/app/modules/login/domain/entities/user_entity.dart';
+import 'package:trans_app/app/modules/login/domain/usecases/login.dart';
+
 class LoginController {
   String email = "";
   String senha = "";
+  final ILogin _login;
+  UserEntity usuarioLogado = UserEntity(email: "", password: "");
+
+  LoginController({
+    required ILogin login,
+  }) : _login = login;
 
   String? verificaEmailValido(String? emailDigitado) {
     if (emailDigitado == null || emailDigitado.isEmpty) {
@@ -25,5 +35,11 @@ class LoginController {
 
     senha = senhaDigitada;
     return null;
+  }
+
+  login() {
+    //TODO: Desativado
+    //usuarioLogado = _login.call(email, senha) as UserEntity;
+    Modular.to.navigate('/home');
   }
 }
