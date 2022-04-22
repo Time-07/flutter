@@ -41,12 +41,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               activeIcon:
                   const CustomBottomNavItem(icon: Icons.person_search_rounded)),
           BottomNavigationBarItem(
-              icon: const Icon(Icons.difference_outlined),
-              backgroundColor: Theme.of(context).colorScheme.secondary,
-              label: 'Saúde',
-              activeIcon:
-                  const CustomBottomNavItem(icon: Icons.difference_outlined)),
-          BottomNavigationBarItem(
               icon: const Icon(Icons.help),
               backgroundColor: Theme.of(context).colorScheme.secondary,
               label: 'Sobre',
