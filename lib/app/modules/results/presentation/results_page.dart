@@ -36,14 +36,16 @@ class _ResultsPageState extends State<ResultsPage> {
                 ),
                 const SizedBox(height: 16),
                 widget.doctors.isNotEmpty
-                    ? ListView.builder(
-                        itemCount: widget.doctors.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return DoctorCard(
-                            doctor: widget.doctors[index],
-                          );
-                        })
+                    ? SingleChildScrollView(
+                        child: ListView.builder(
+                            itemCount: widget.doctors.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return DoctorCard(
+                                doctor: widget.doctors[index],
+                              );
+                            }),
+                      )
                     : const NoDoctorsFound(),
               ],
             )),

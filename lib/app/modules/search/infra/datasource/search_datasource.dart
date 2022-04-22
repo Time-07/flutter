@@ -36,7 +36,8 @@ class SearchDataSource extends ISearchDatasource {
         courses: "",
         healthPlan: "",
         bathroomSpecific: true,
-        linkedin: ""));
+        linkedin: "",
+        photo: ""));
     return lista;
   }
 }

@@ -50,7 +50,7 @@ class CustomAlertDialog extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.pop(context);
               },
             ),
           ],

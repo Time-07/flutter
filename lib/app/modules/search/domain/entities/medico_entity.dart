@@ -19,6 +19,7 @@ class MedicoEntity {
   final String healthPlan;
   final bool bathroomSpecific;
   final String linkedin;
+  final String photo;
 
   MedicoEntity(
       {required this.name,
@@ -40,5 +41,6 @@ class MedicoEntity {
       required this.courses,
       required this.healthPlan,
       required this.bathroomSpecific,
-      required this.linkedin});
+      required this.linkedin,
+      required this.photo});
 }

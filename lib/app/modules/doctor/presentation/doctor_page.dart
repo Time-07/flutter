@@ -30,8 +30,10 @@ class _DoctorPageState extends ModularState<DoctorPage, DoctorController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
-            const Center(
+            Center(
               child: CircleAvatar(
+                backgroundColor: Colors.transparent,
+                child: Image(image: AssetImage(widget.doctor.photo)),
                 radius: 60,
               ),
             ),
