@@ -10,10 +10,6 @@ class HomeController {
       return PrePesquisa();
     }
 
-    if (page.value == 1) {
-      return Container();
-    }
-
     return SobrePage();
   }
 }
