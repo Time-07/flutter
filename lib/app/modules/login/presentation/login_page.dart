@@ -26,9 +26,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              const Logo(
-                tamanho: 120,
-              ),
+              const Logo(),
               const SizedBox(height: 24),
               Text(
                 'Login',
@@ -44,7 +42,6 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       CustomTextFormField(
                         labelText: 'email',
                         validar: controller.verificaEmailValido,
-                        textInput: TextInputType.emailAddress,
                       ),
                       const SizedBox(height: 15),
                       CustomTextFormField(
@@ -57,38 +54,27 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 ),
               ),
               Row(
-                children: [
+                children: const [
                   Padding(
-                      padding: const EdgeInsets.only(left: 30.0),
+                      padding: EdgeInsets.only(left: 30.0),
                       child: CustomUnderlineTextButton(
-                        callback: () {
-                          Modular.to.navigate('/');
-                        },
+                        rota: '/',
                         texto: 'Esqueci minha senha',
                       )),
                 ],
               ),
               const SizedBox(height: 15),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                child: CustomElevatedButton(
-                    texto: 'Entrar',
-                    onPressedCall: () {
-                      _formKey.currentState!.save();
-                      if (_formKey.currentState!.validate()) {
-                        controller.login.call();
-                      }
-                    }),
+              CustomElevatedButton(
+                texto: 'Entrar',
+                formKey: _formKey,
               ),
               const SizedBox(height: 10),
               Text(
                 'Ainda não tem uma conta?',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              CustomUnderlineTextButton(
-                callback: () {
-                  Modular.to.navigate('/register');
-                },
+              const CustomUnderlineTextButton(
+                rota: '/cadastro',
                 texto: 'Cadastre-se!',
               )
             ],

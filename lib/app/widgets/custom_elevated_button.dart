@@ -4,41 +4,27 @@ class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     Key? key,
     required this.texto,
-    required this.onPressedCall,
-    this.icone,
+    required this.formKey,
   }) : super(key: key);
 
   final String texto;
-  final Function onPressedCall;
-  final IconData? icone;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          elevation: 10,
-          minimumSize: const Size(256, 64),
-          primary: Theme.of(context).colorScheme.tertiary,
-          side: BorderSide(
-            color: Theme.of(context).colorScheme.outline,
-          )),
-      //TODO: Corrigir chamada para aceitar argumento
-      onPressed: () => onPressedCall(),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          //TODO: Corrigir cor
-          icone != null
-              ? Icon(
-                  icone,
-                  color: Colors.black,
-                )
-              : Container(),
-          Text(
-            texto,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-        ],
+      style: ElevatedButton.styleFrom(minimumSize: const Size(256, 64)),
+      onPressed: () {
+        formKey.currentState!.save();
+        if (formKey.currentState!.validate()) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Funcionou')),
+          );
+        }
+      },
+      child: Text(
+        texto,
+        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }
